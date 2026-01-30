@@ -1,0 +1,94 @@
+/* style.css */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.8; 
+    margin: 0; 
+    padding: 0; 
+    /* Sử dụng ảnh bìa làm nền sau với độ mờ nhẹ */
+    background: linear-gradient(rgba(255, 250, 240, 0.85), rgba(255, 250, 240, 0.85)), 
+                url('Cây cam ngọt của tôi - Ảnh bìa.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #4e342e;
+    overflow-x: hidden;
+}
+
+/* Hiệu ứng lá và quả rơi */
+.leaf {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { top: -10%; transform: translateX(0) rotate(0deg); }
+    100% { top: 110%; transform: translateX(120px) rotate(360deg); }
+}
+
+header { 
+    background: linear-gradient(135deg, #ffb74d, #ff8a65); 
+    color: white; 
+    padding: 5rem 1rem; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+header h1 { margin: 0; font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+
+.container { 
+    max-width: 950px; 
+    margin: -40px auto 50px; 
+    padding: 30px; 
+    background: rgba(255, 255, 255, 0.93); /* Nền trắng trong suốt nhẹ */
+    border-radius: 30px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2 { 
+    color: #d84315; 
+    border-bottom: 2px dashed #ffb74d; 
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+h2::before { content: "🍊"; margin-right: 12px; }
+
+/* Các khối màu Pastel theo yêu cầu */
+.section-box {
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border-left: 8px solid;
+    transition: 0.3s ease;
+}
+
+.orange-pastel { background-color: #fff3e0; border-color: #ff9800; }
+.yellow-pastel { background-color: #fffde7; border-color: #fdd835; }
+.green-pastel { background-color: #f1f8e9; border-color: #8bc34a; }
+
+.section-box:hover { transform: translateY(-5px); }
+
+.media-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ffe0b2;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+img, video { width: 100%; height: auto; border-radius: 12px; }
+audio { width: 100%; margin-top: 15px; }
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(62, 39, 35, 0.9);
+    color: #ffccbc;
+}
+
+footer a { color: #ffab91; text-decoration: none; font-weight: bold; }
